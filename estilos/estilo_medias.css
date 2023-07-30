@@ -1,0 +1,73 @@
+/*
+Device Breakpoints
+
+Mobile: 360x768  -> de 600px ate 768px
+Tablet: 768x1024 ->  de 769px ate 992px
+Pc: 1024x768     -> de 993px ate 1200px
+TV: Acima de 1200px
+*/
+
+@media print{
+
+    body{
+        background-image: url("../imagens/back-print.jpg");
+        font-family: 'Courier New', Courier, monospace;
+    } /*Não imprime background*/
+
+    main{
+        width: 90vw;
+        border: 2px solid black;
+        font-size: 0.7em;
+    }
+
+    main::after{
+        content: "Pagina impressa por um site desenvolvido por Gabriel Soardi Machado.";
+    }
+
+    h1{
+        text-shadow: none;
+        color: black;
+    }
+
+    img#phone{display: none;}
+    img#tablet{display: none;}
+    img#print{display: block;}
+    img#pc{display: none;}
+    img#tv{display: none;}
+}
+
+@media screen and (min-width: 688px) and (max-width: 992px){
+    body{
+        background-image: url("../imagens/back-tablet.jpg");
+    }
+
+    img#phone{display: none;}
+    img#tablet{display: block;}
+    img#print{display: none;}
+    img#pc{display: none;}
+    img#tv{display: none;}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1366px){
+    body{
+        background-image: url("../imagens/back-pc.jpg");
+    }
+
+    img#phone{display: none;}
+    img#tablet{display: none;}
+    img#print{display: none;}
+    img#pc{display: block;}
+    img#tv{display: none;}
+}
+
+@media screen and (min-width: 1367px){
+    body{
+        background-image: url("../imagens/back-tv.jpg");
+    }
+
+    img#phone{display: none;}
+    img#tablet{display: none;}
+    img#print{display: none;}
+    img#pc{display: none;}
+    img#tv{display: block;}
+}
